@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/img/logo1.ico">
+    <title>503 : Service Temporary Unavailable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/style404.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="static/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+
+</head>
+<body>
+
+    
+    <!-- Page Preloder Start -->
+
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+    <!-- Page Preloader Ends -->
+
+
+        
+    {% if session["user_id"] %} 
+    
+    
+        <!-- Header Section Begin -->
+
+            <header class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="header__logo">
+                                <a href="/index">
+                                    <img src="static/img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="header__nav">
+                                <nav class="header__menu mobile-menu">
+                                    <ul>
+                                        <li><a href="/index">Homepage</a></li>
+                                        <li><a href="/quotes">Quotes</a></li>
+                                        <li><a href="/details">Anime</a></li>
+                                        <li><a href="/dance"> Dance </a></li>
+                                        <li><a href="/slap"> Slap</a></li>
+                                        <li><a href="/hug"> Hug</a></li>
+                                        <li><a href="/logout"> Logout</a></li><br>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="header__right">
+                                <a href="/profile"><span class="icon_profile"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+            </header>
+
+        <!-- Header End -->
+
+
+        <!-- Welcome User Interface Start-->
+
+            <section class="normal-breadcrumb set-bg" data-setbg="static/img/normal-breadcrumb.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="normal__breadcrumb__text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Welcome User Interface Ends -->
+
+
+        <!-- Show Page -->
+
+            <div id="notfound">
+                <div class="notfound">
+                    <div class="notfound-404"></div>
+                    <h1>503</h1>
+                    <h2>Service Temporary Unavailable</h2>
+                    <p>The server encounter an internal error or misconfiguration and was unable to complete your request kindly check back after some time.</p>
+                    <a href="/index">Back to homepage</a>
+                </div>
+            </div>
+
+        <!-- End Show Page -->
+
+
+        <!-- Footer Section Begin -->
+
+            <footer class="footer">
+                <div class="page-up">
+                    <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+                </div>
+                <div class="container">
+                    <div class="row">
+                            <div class="col-lg-2">
+                                <div class="footer__logo">
+                                    <a href="/index"><img src="static/img/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="footer__nav">
+                                    <ul>
+                                        <li><a href="/index">Home</a></li>
+                                        <li><a href="/details">Anime</a></li>
+                                        <li><a href="/quotes">Quotes</a></li>
+                                        <li><a href="/dance"> Dance </a></li>
+                                        <li><a href="/slap"> Slap</a></li>
+                                        <li><a href="/hug"> Hug</a></li>
+                                        <li><a href="/logout"> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>             
+                            <div class="col-lg-3 right">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                            <div class="col-lg-3"></div>  
+                        </div>
+                </div>
+            </footer>
+
+        <!-- Footer Section End -->
+
+
+    {% else %}
+
+
+        <!-- Header Section Begin -->
+
+            <header class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="header__logo">
+                                <a href="/">
+                                    <img src="static/img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+            </header>
+
+        <!-- Header End -->
+
+
+        <!-- Welcome User Interface Start-->
+
+            <section class="normal-breadcrumb set-bg" data-setbg="static/img/normal-breadcrumb.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="normal__breadcrumb__text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Welcome User Interface Ends -->
+
+
+        <!-- Show Page -->
+
+            <div id="notfound">
+                <div class="notfound">
+                    <div class="notfound-404"></div>
+                    <h1>503</h1>
+                    <h2>Service Temporary Unavailable</h2>
+                    <p>The server encounter an internal error or misconfiguration and was unable to complete your request kindly check back after some time.</p>
+                    <a href="/">Back to homepage</a>
+                </div>
+            </div>
+
+        <!-- End Show Page -->
+
+
+        <!-- Footer Section Begin -->
+
+            <footer class="footer">
+                <div class="page-up">
+                    <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <div class="footer__logo">
+                                <a href="/"><img src="static/img/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8 right">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                        <div class="col-lg-3"></div>  
+                    </div>
+                </div>
+            </footer>
+
+        <!-- Footer Section End -->
+
+
+    {% endif %}
+
+
+        <!-- Js Plugins Start -->
+
+            <script src="static/js/jquery-3.3.1.min.js"></script>
+            <script src="static/js/bootstrap.min.js"></script>
+            <script src="static/js/player.js"></script>
+            <script src="static/js/jquery.nice-select.min.js"></script>
+            <script src="static/js/mixitup.min.js"></script>
+            <script src="static/js/jquery.slicknav.js"></script>
+            <script src="static/js/owl.carousel.min.js"></script>
+            <script src="static/js/main.js"></script>
+
+        <!-- Js Plugins End -->
+
+
+</body>
+</html>
