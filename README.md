@@ -13,7 +13,7 @@
 ### 4) https://kitsu.io/api/edge/anime
 ### 5) https://kitsu.io/api/edge/manga
 
-# Special thanks to David Malan [CS-50] lecture's which help in understanding the basics of Flask Based web Application. 
+# Special thanks to David Malan [CS-50] lecture's which help me in understanding the basics of Flask Based web Application. 
 ### You can get quotes, slap gif, hug gif, dance gif of random anime so that you didn;t get bored on seeing a particular image again and again.
 
 - If you want to colobrate for any flask or django based web application feel free to mail on [Contact Me](mailto:yash.mistry.g43@gmail.com)
