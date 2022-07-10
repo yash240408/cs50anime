@@ -23,7 +23,7 @@ db = SQL("sqlite:///login.db")
 # Requires that "Less secure app access" be on
 # https://support.google.com/accounts/answer/6010255
 app.config["MAIL_DEFAULT_SENDER"] = "cs50.anime@gmail.com"
-app.config["MAIL_PASSWORD"] = "ftbipcwfbwlwhmoo"
+app.config["MAIL_PASSWORD"] = "vtcvzrjzndjcumlo"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_USE_TLS"] = True
