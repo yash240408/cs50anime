@@ -98,11 +98,6 @@ def logout():
     # Forget any user_id if found
     try:
         session.clear()
-        del session["user_id"]
-        del session["fname"]
-        del session["lname"]
-        del session["email"]
-        del session["pass"]
     except:
         pass
     # Redirect user to login form
