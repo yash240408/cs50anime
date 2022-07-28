@@ -292,8 +292,8 @@ def signup():
         rows = db.execute("SELECT * FROM users ")
         user_already_email = []
         for row in rows:
-            user_already_email.append(row["email"])
-        if email in user_already_email:
+            user_already_email.append(row["email"].lower())
+        if email.lower() in user_already_email:
             return render_template("signup.html",message=f'The email "{email}" is already registered kindly use another email')
         # Try to insert values in the database
         try:
