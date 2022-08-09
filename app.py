@@ -23,10 +23,11 @@ db = SQL("sqlite:///login.db")
 # Requires that "Less secure app access" be on
 # https://support.google.com/accounts/answer/6010255
 app.config["MAIL_DEFAULT_SENDER"] = "cs50.anime@gmail.com"
-app.config["MAIL_PASSWORD"] = "vtcvzrjzndjcumlo"
-app.config["MAIL_PORT"] = 587
+app.config["MAIL_PASSWORD"] = "xodzjmagfsdkyrrz"
+app.config["MAIL_PORT"] = 465
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_USE_TLS"] = True
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 app.config["MAIL_USERNAME"] = "cs50.anime"
 mail = Mail(app)
 
@@ -476,7 +477,7 @@ def update():
                 fname = request.form.get("fname")
                 lname = request.form.get("lname")
                 email = request.form.get("email")
-                
+
                 # Validation of the input
                 if fname == "" and email == "":
                     return render_template("update.html", message="Please Provide Necessary Details")
@@ -484,14 +485,18 @@ def update():
                     return render_template("update.html", message="Please Provide First Name")
                 if email == "":
                     return render_template("update.html", message="Please Provide Email")
+                
                 db.execute("UPDATE users SET fname = ?,lname = ?,email = ?  WHERE  id = ?", 
                             fname, lname, email, session["user_id"])
-                mess = "Your Email Was Changed!"
-                messi = Message(mess, recipients=[email])
-                session["updated_email"] = email
-                messi.html = render_template("updateprofile.html")
-                messi.body = messi.html
-                mail.send(messi) 
+                try:
+                    mess = "Your Profile Was Changed!"
+                    messi = Message(mess, recipients=[email])
+                    session["updated_email"] = email
+                    messi.html = render_template("updateprofile.html")
+                    messi.body = messi.html
+                    mail.send(messi)
+                except:
+                    pass 
                 flash("Profile Updated Successfully")
                 return redirect('/profile')
             # Executes if the request is GET
@@ -506,6 +511,46 @@ def update():
         pass
     flash("Please Login First")
     return redirect("/")
+
+
+# This route will update password of the user via an POST method 
+@app.route("/updatepass", methods=["POST","GET"])
+def updatepass():
+    ''' Update Profile Page '''
+    # Check if user is already logged in
+    try:
+        if session["user_id"] is None:
+            render_template("login.html", message="Please Login First")
+        else:
+            # Executes if request is POST
+            if request.method=="POST":
+                current_pass = request.form.get("current_pass")
+                new_pass = request.form.get("new_pass")
+                new_confirm_pass = request.form.get("new_confirm_pass")
+
+                # Validation of the input
+                if current_pass == "" and new_pass == "" and new_confirm_pass == "":
+                    return render_template("updatepassword.html", message="Please Provide Necessary Details")
+                if current_pass == "" or current_pass != session['pass']:
+                    return render_template("updatepassword.html", message="Please Provide Current Password")
+                if new_pass == "":
+                    return render_template("updatepassword.html", message="Please Provide New Password")
+                if new_confirm_pass == "":
+                    return render_template("updatepassword.html", message="Please Provide New Confirm Password")
+
+                new_hash = generate_password_hash(new_confirm_pass)
+                
+                db.execute("UPDATE users SET hash = ? WHERE  id = ?", new_hash,  session["user_id"])
+                flash("Password Updated Successfully")
+                return redirect('/profile')
+            # Executes if the request is GET
+            else:
+                return render_template("updatepassword.html", message="Be Sure To Enter Correct Details ")
+    except:
+        pass
+    flash("Please Login First")
+    return redirect("/")
+
 
 
 # Handlig the error code 404 with a customize html page
